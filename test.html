@@ -8,22 +8,25 @@
 </head>
 <body>
   <script>
-    var strStr = function(haystack, needle) {
-  if(!needle.length) return 0
-  let h = haystack.length
-  let n = needle.length
-  if(h < n) return -1
-  for(let i = 0;i <= h - n; i++){
-    let k = 0;
-    for(k = 0; k < n; k++){
-      if(haystack[i+k] !== needle[k]) break
+var longestCommonPrefix = function(strs) {
+    let length = strs.length
+    let result = ''
+    if(!length) return ''
+    let notNull = strs.every(item => {
+      return item
+    })
+    if(!notNull) return ''
+    for(let i = 1; i < length; i++){
+      console.log(i)
+      for(let k = 0; k < strs[0].length; k++){
+        if(strs[0][k] == strs[i][k]){
+          result += strs[i][k]
+        }
+      }
     }
-    if(i == k) return i
-  }
-  return -1
-
+    return result
 };
-    console.log(strStr('hello', 'll'))
+    console.log(longestCommonPrefix(["flower","flower","flower","flower"]))
   </script>
 </body>
 </html>
