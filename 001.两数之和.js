@@ -11,7 +11,14 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-
+  let arrLength = nums.length
+  for(let i = 0; i < arrLength - 1; i++){
+    for(let k = i + 1; k < arrLength; k++){
+      if(nums[i] + nums[k] === target) {
+        return [i, k]
+      }
+    }
+  }
 };
 // @lc code=end
 
