@@ -37,7 +37,7 @@ var addTwoNumbers = function(l1, l2) {
     listnode.next = new ListNode(sum % 10)
     // 保存当前listnode
     listnode = listnode.next
-    // 准备重新进入循环
+    // 准备重新进入循环 
     if(l1){
       l1 = l1.next
     }
